@@ -1,0 +1,11 @@
+/* Capgemini Invent Design System - Root Stylesheet
+   Import this one file to get everything: fonts, tokens, base reset.
+   Never add inline rules here - add imports only. */
+
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/motion.css";
+@import "./tokens/base.css";
+@import "./components.css";

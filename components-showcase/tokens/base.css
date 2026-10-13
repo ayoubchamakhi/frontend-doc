@@ -1,0 +1,83 @@
+/* Capgemini Invent Design System - Base Reset & Global Styles */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-lh);
+  font-weight: var(--fw-regular);
+  color: var(--text-primary);
+  background-color: var(--surface-base);
+}
+
+/* Focus - Light Blue ring on every interactive element. Never remove it;
+   it is the brand's accessible focus signal on both light and dark. */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+ul, ol { list-style: none; }
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+p, li, td, th { text-wrap: pretty; }
+
+/* Headings default to Ubuntu Light, sentence case, Capgemini Blue.
+   (base.css sets the family/weight; color is inherited from --text-heading
+   where components opt in, so plain document headings stay navy-on-white
+   readable by default.) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-light);
+  text-wrap: balance;
+  color: var(--text-heading);
+}
+
+/* Shared keyframes */
+@keyframes cg-spin { to { transform: rotate(360deg); } }
+@keyframes cg-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes cg-modal-in { from { opacity: 0; transform: translateY(var(--space-6)); } }
+@keyframes cg-toast-in { from { opacity: 0; transform: translateY(var(--toast-from, var(--space-3))); } }
+@keyframes cg-toast-timer { to { transform: scaleX(0); } }
+@keyframes cg-progress-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,168 @@
+/* Capgemini Invent Design System - Color Tokens
+   Primitive palette -> semantic aliases.
+   Source of truth: Capgemini Brand Book V1.0 (March 2026), "Bringing blue
+   to life", and CG_Colour-Pallet. Light-first: white surfaces, Capgemini
+   Blue headings. Dark mode (Capgemini Dark Blue navy) is a documented
+   override, used only when the brief asks for it. */
+
+:root {
+
+  /* ── Primitive: Primary palette ── */
+  --color-capgemini-blue:      #0058ab;  /* signature blue - headings, primary CTA */
+  --color-light-blue:          #1db8f2;  /* accent - highlight one word, links, focus */
+  --color-capgemini-dark-blue: #121a38;  /* navy - dark surfaces, body text on light */
+  --color-white:               #ffffff;
+
+  /* ── Primitive: Secondary palette ──
+     Warm supporting tones. Brandbook rule: use in SMALL amounts to add a
+     pop of color (a callout, a data series). Never as large fills, never
+     more than one per composition. */
+  --color-turquoise:  #00d5d0;
+  --color-yellow:     #feb100;
+  --color-orange:     #ff816e;
+  --color-lilac:      #d4d3f1;
+  --color-teal:       #00828e;
+  --color-terracotta: #be4d00;
+  --color-deep-red:   #8f3237;
+  --color-purple:     #71609e;
+
+  /* ── Primitive: Blue tints ──
+     For digital UI + long-form editorial: pace, dividers, table zebra,
+     hover fills. Derived from Capgemini Blue; the brandbook permits tints
+     for digital/UX use. Do NOT invent new blue *shades* outside these. */
+  --color-blue-900: #0a2340;
+  --color-blue-800: #103a6b;
+  --color-blue-700: #0058ab;   /* = Capgemini Blue */
+  --color-blue-500: #3f86c9;
+  --color-blue-300: #8fbde4;
+  --color-blue-100: #d6e7f5;
+  --color-blue-50:  #eef5fb;
+
+  /* ── Primitive: Neutrals (Grey ramp) ──
+     Aligned to the Invent 2026 deck greys. Used for text, borders,
+     surfaces, muted UI. Not "new colors" - neutral scaffolding. */
+  --color-grey-1: #f3f4f7;   /* lightest - sunken/hover on white */
+  --color-grey-2: #e2e6ec;
+  --color-grey-3: #c7cfda;
+  --color-grey-4: #adb8c2;   /* deck secondary text on dark */
+  --color-grey-5: #738597;
+  --color-grey-6: #47556b;   /* body text on light */
+  --color-grey-7: #2b3448;
+  --color-grey-8: #1a2033;
+
+  /* ── Primitive: Status ──
+     Built from the brand palette so status never introduces off-brand hues.
+     Success uses Teal (brand), warning Yellow, error Deep Red, info Light Blue. */
+  --color-success: #00828e;  /* teal */
+  --color-warning: #feb100;  /* yellow */
+  --color-error:   #8f3237;  /* deep red */
+  --color-info:    #1db8f2;  /* light blue */
+
+  /* Status FOREGROUND shades - darkened brand hues for text/icons sitting on a
+     light status tint, so the pairing passes AA contrast. The brandbook allows
+     tint + status combinations for digital UI with accessibility in mind. These
+     are not new colors: each is the accessible foreground of its brand status. */
+  --color-success-fg: #00646e;  /* teal, darkened for text on teal tint */
+  --color-warning-fg: #8a6200;  /* yellow, darkened for text on yellow tint */
+  --color-error-fg:   #8f3237;  /* deep red already reads on its tint */
+  --color-info-fg:    #0a6e9e;  /* light blue, darkened for text on blue tint */
+
+  /* ── Signature gradient (Progress Bar) ──
+     Navy -> blue -> light-blue -> turquoise, left to right. The brandbook's
+     one sanctioned decorative element. Never reverse the direction. */
+  --gradient-progress: linear-gradient(90deg, #121a38 0%, #0058ab 45%, #1db8f2 80%, #00d5d0 100%);
+  --gradient-progress-subtle: linear-gradient(90deg, #0058ab 0%, #1db8f2 60%, #00d5d0 100%);
+  /* Protection overlay only (image legibility) - not a page background. */
+  --gradient-scrim-dark:  linear-gradient(180deg, rgba(18,26,56,0) 0%, rgba(18,26,56,0.85) 100%);
+  --gradient-scrim-navy:  linear-gradient(90deg, rgba(18,26,56,0.9) 0%, rgba(18,26,56,0) 100%);
+
+  /* ═══════════════════════════════════════════════
+     SEMANTIC TOKENS - LIGHT MODE (default)
+     ═══════════════════════════════════════════════ */
+
+  /* Surfaces */
+  --surface-sunken:   var(--color-grey-1);
+  --surface-base:     var(--color-white);
+  --surface-raised-1: var(--color-white);
+  --surface-raised-2: var(--color-white);
+  --surface-overlay:  rgba(18, 26, 56, 0.55);
+  --surface-inverse:  var(--color-capgemini-dark-blue);
+
+  /* Text */
+  --text-primary:     var(--color-capgemini-dark-blue);        /* navy */
+  --text-secondary:   var(--color-grey-6);                     /* #47556b */
+  --text-muted:       var(--color-grey-5);                     /* #738597 */
+  --text-disabled:    rgba(18, 26, 56, 0.35);
+  --text-inverse:     var(--color-white);
+  --text-heading:     var(--color-capgemini-blue);             /* headings = Capgemini Blue */
+  --text-accent:      var(--color-light-blue);                 /* one highlighted word */
+  --text-link:        var(--color-capgemini-blue);
+  --text-error:       var(--color-error);
+
+  /* Borders */
+  --border-default:   var(--color-grey-2);
+  --border-strong:    var(--color-grey-3);
+  --border-inverse:   rgba(255, 255, 255, 0.18);
+  --border-focus:     var(--color-light-blue);
+  --border-error:     var(--color-error);
+
+  /* Brand */
+  --brand-primary:    var(--color-capgemini-blue);
+  --brand-secondary:  var(--color-capgemini-dark-blue);
+  --brand-accent:     var(--color-light-blue);
+
+  /* Interactive / CTA */
+  --cta-bg:             var(--color-capgemini-blue);
+  --cta-text:           var(--color-white);
+  --cta-hover-bg:       #00468a;                    /* Capgemini Blue, one step darker */
+  --cta-outline-border: var(--color-capgemini-blue);
+  --cta-outline-text:   var(--color-capgemini-blue);
+  --cta-focus-ring:     var(--color-light-blue);
+
+  /* Status (semantic) */
+  --status-success:   var(--color-success);
+  --status-warning:   var(--color-warning);
+  --status-error:     var(--color-error);
+  --status-info:      var(--color-info);
+
+  /* Focus ring color (see spacing.css for the ring shadow token) */
+  --color-focus: var(--color-light-blue);
+}
+
+/* ═══════════════════════════════════════════════
+   DARK MODE overrides - Capgemini Dark Blue (navy) base.
+   Enable with <html data-theme="dark"> or class .theme-dark.
+   Headings turn white; Light Blue stays the accent. Mirrors the
+   Invent deck's Dark theme. Never mix light and dark in one deliverable.
+   ═══════════════════════════════════════════════ */
+[data-theme="dark"],
+.theme-dark, .dark {
+  --surface-sunken:   #0b1226;
+  --surface-base:     var(--color-capgemini-dark-blue);   /* #121a38 */
+  --surface-raised-1: #1a2340;
+  --surface-raised-2: #222c4d;
+  --surface-overlay:  rgba(0, 0, 0, 0.6);
+  --surface-inverse:  var(--color-white);
+
+  --text-primary:     rgba(255, 255, 255, 0.92);
+  --text-secondary:   var(--color-grey-4);   /* #adb8c2 */
+  --text-muted:       var(--color-grey-5);   /* #738597 */
+  --text-disabled:    rgba(255, 255, 255, 0.35);
+  --text-inverse:     var(--color-capgemini-dark-blue);
+  --text-heading:     var(--color-white);    /* headings = white on navy */
+  --text-accent:      var(--color-light-blue);
+  --text-link:        var(--color-light-blue);
+
+  --border-default:   rgba(255, 255, 255, 0.12);
+  --border-strong:    rgba(255, 255, 255, 0.24);
+  --border-inverse:   rgba(18, 26, 56, 0.4);
+  --border-focus:     var(--color-light-blue);
+
+  --brand-primary:    var(--color-light-blue);
+
+  --cta-bg:             var(--color-capgemini-blue);
+  --cta-text:           var(--color-white);
+  --cta-hover-bg:       var(--color-light-blue);
+  --cta-outline-border: rgba(255, 255, 255, 0.6);
+  --cta-outline-text:   var(--color-white);
+}

@@ -1,0 +1,189 @@
+/* Capgemini Invent Design System - Typography Tokens
+   Typeface: Ubuntu only (Verdana system fallback).
+   Source of truth: Capgemini Brand Book V1.0 "Shaping our statements" +
+   the Invent 2026 deck type scale.
+
+   Principles from the brandbook:
+   - Ubuntu Regular (400) is the DEFAULT weight for UI text (labels, buttons,
+     nav). Ubuntu Light (300) is used for BODY copy, not just display/hero.
+   - Ubuntu Light (300) carries large display + hero headlines, and all body
+     paragraph text.
+   - Ubuntu Medium (500) for body headers, UI labels, notations.
+   - Headlines are SENTENCE CASE, never all-caps, never all-italic,
+     never underlined. Italic emphasizes a phrase within body copy.
+   - Notations/overlines: slightly tracked UPPERCASE, Regular/Medium. */
+
+:root {
+  /* ── Font families ── */
+  --font-display: "Ubuntu", Verdana, Geneva, Tahoma, sans-serif;
+  --font-sans:    "Ubuntu", Verdana, Geneva, Tahoma, sans-serif;
+  --font-ui:      "Ubuntu", Verdana, Geneva, Tahoma, sans-serif;
+
+  /* ── Font weights ── */
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+
+  /* ── Type scale - Display (Ubuntu Light) ──
+     Hero and cover statements. Light weight = the brand's open, airy voice. */
+  --text-display-1-size:   72px;
+  --text-display-1-lh:     76px;
+  --text-display-1-weight: var(--fw-light);
+  --text-display-1-ls:     -1px;
+
+  --text-display-2-size:   56px;
+  --text-display-2-lh:     62px;
+  --text-display-2-weight: var(--fw-light);
+  --text-display-2-ls:     -0.5px;
+
+  /* ── Type scale - Headline (Ubuntu Light/Regular) ── */
+  --text-headline-1-size:   40px;
+  --text-headline-1-lh:     48px;
+  --text-headline-1-weight: var(--fw-light);
+
+  --text-headline-2-size:   32px;
+  --text-headline-2-lh:     40px;
+  --text-headline-2-weight: var(--fw-light);
+
+  --text-headline-3-size:   24px;
+  --text-headline-3-lh:     32px;
+  --text-headline-3-weight: var(--fw-regular);
+
+  /* ── Type scale - Subtitle / lead paragraph (Ubuntu Regular) ── */
+  --text-lead-size:   20px;
+  --text-lead-lh:     30px;
+  --text-lead-weight: var(--fw-regular);
+
+  --text-subtitle-size:   18px;
+  --text-subtitle-lh:     26px;
+  --text-subtitle-weight: var(--fw-medium);
+
+  /* ── Type scale - Body (Ubuntu Light) ──
+     Confirmed against production marketing pages: body copy runs at
+     Ubuntu Light (300), not Regular. Regular is reserved for UI/label text. */
+  --text-body-1-size:   16px;
+  --text-body-1-lh:     24px;
+  --text-body-1-weight: var(--fw-light);
+
+  --text-body-2-size:   14px;
+  --text-body-2-lh:     20px;
+  --text-body-2-weight: var(--fw-light);
+
+  --text-body-header-size:   16px;
+  --text-body-header-lh:     22px;
+  --text-body-header-weight: var(--fw-medium);
+
+  /* ── Type scale - Interface / UI ── */
+  --text-button-size:   14px;
+  --text-button-lh:     16px;
+  --text-button-weight: var(--fw-medium);
+  --text-button-ls:     0.2px;
+
+  --text-label-size:    13px;
+  --text-label-lh:      16px;
+  --text-label-weight:  var(--fw-medium);
+  --text-label-ls:      0.2px;
+
+  --text-caption-size:  12px;
+  --text-caption-lh:    16px;
+  --text-caption-weight: var(--fw-regular);
+
+  /* ── Notation / Overline - tracked uppercase (brandbook "notations") ── */
+  --text-overline-size:      12px;
+  --text-overline-lh:        16px;
+  --text-overline-weight:    var(--fw-medium);
+  --text-overline-ls:        1.5px;
+  --text-overline-transform: uppercase;
+
+  /* ── Metric / big number ──
+     Data figures set large in Ubuntu Light. The Invent signature: a big
+     light-weight number beside a tracked uppercase label. */
+  --text-metric-size:   48px;
+  --text-metric-lh:     52px;
+  --text-metric-weight: var(--fw-light);
+}
+
+/* ── Utility type classes ── */
+.cg-display-1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-1-size);
+  line-height: var(--text-display-1-lh);
+  font-weight: var(--text-display-1-weight);
+  letter-spacing: var(--text-display-1-ls);
+}
+.cg-display-2 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2-size);
+  line-height: var(--text-display-2-lh);
+  font-weight: var(--text-display-2-weight);
+  letter-spacing: var(--text-display-2-ls);
+}
+.cg-headline-1 {
+  font-family: var(--font-display);
+  font-size: var(--text-headline-1-size);
+  line-height: var(--text-headline-1-lh);
+  font-weight: var(--text-headline-1-weight);
+}
+.cg-headline-2 {
+  font-family: var(--font-display);
+  font-size: var(--text-headline-2-size);
+  line-height: var(--text-headline-2-lh);
+  font-weight: var(--text-headline-2-weight);
+}
+.cg-headline-3 {
+  font-family: var(--font-display);
+  font-size: var(--text-headline-3-size);
+  line-height: var(--text-headline-3-lh);
+  font-weight: var(--text-headline-3-weight);
+}
+.cg-lead {
+  font-family: var(--font-sans);
+  font-size: var(--text-lead-size);
+  line-height: var(--text-lead-lh);
+  font-weight: var(--text-lead-weight);
+  color: var(--text-secondary);
+}
+.cg-body-1 {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-lh);
+  font-weight: var(--text-body-1-weight);
+}
+.cg-body-2 {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-lh);
+  font-weight: var(--text-body-2-weight);
+}
+.cg-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-lh);
+  font-weight: var(--text-caption-weight);
+  color: var(--text-secondary);   /* muted fails AA at 12px */
+}
+.cg-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-lh);
+  font-weight: var(--text-label-weight);
+  letter-spacing: var(--text-label-ls);
+}
+.cg-overline {
+  font-family: var(--font-ui);
+  font-size: var(--text-overline-size);
+  line-height: var(--text-overline-lh);
+  font-weight: var(--text-overline-weight);
+  letter-spacing: var(--text-overline-ls);
+  text-transform: var(--text-overline-transform);
+}
+.cg-metric {
+  font-family: var(--font-display);
+  font-size: var(--text-metric-size);
+  line-height: var(--text-metric-lh);
+  font-weight: var(--text-metric-weight);
+  color: var(--text-heading);
+}
+/* One-word accent inside a heading - the brand's signature blue pop. */
+.cg-accent { color: var(--text-accent); }

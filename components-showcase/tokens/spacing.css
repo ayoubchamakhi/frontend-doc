@@ -1,0 +1,74 @@
+/* Capgemini Invent Design System - Spacing, Radii, Elevation
+   8-point grid base. The brandbook anchors layout and the Progress Bar to
+   a margin-based grid; the shortest side of the Progress Bar equals the
+   page margin. --page-margin is that reference value. */
+
+:root {
+  --space-0:   0px;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* ── Page / layout ── */
+  --page-margin:         96px;   /* marketing/editorial gutter + Progress Bar reference */
+  --page-margin-product: 24px;   /* product UI content padding */
+  --content-max:         1200px; /* centered max content width */
+  --sidebar-width:       264px;
+  --nav-height:          80px;
+  --topbar-height:       56px;   /* product app top bar */
+  --sidebar-collapsed:   64px;   /* icon-only sidebar (tablet) */
+  --section-rhythm:      120px;  /* vertical space between marketing sections (desktop) */
+
+  /* ── Corner radii ──
+     Capgemini's actual product UI is almost entirely square - most surfaces
+     (cards, menus, dialogs, inputs) carry NO radius. The two exceptions:
+     buttons are fully pill-shaped, and a video/media element overlaid on a
+     color fill gets a small 10px radius. Don't reach for --radius-sm/md/lg
+     as a default "rounded corner" - use --radius-none unless a rule below
+     says otherwise. */
+  --radius-none: 0px;
+  --radius-xs:   4px;    /* rare: tight inputs only, use sparingly */
+  --radius-sm:   8px;    /* legacy/rare: small controls, avoid for new cards/menus */
+  --radius-md:   12px;   /* legacy/rare */
+  --radius-lg:   16px;   /* legacy/rare */
+  --radius-xl:   24px;   /* legacy/rare */
+  --radius-video: 10px;  /* video/media overlaid on a color fill only */
+  --radius-full: 9999px; /* buttons, chips, tags, badges, switches, pills */
+
+  /* ── Elevation / shadows ──
+     Soft, blue-tinted shadows on light surfaces. Focus uses a Light Blue
+     ring, not a shadow. */
+  --elevation-0: none;
+  --elevation-1: 0 1px 2px rgba(18,26,56,0.06), 0 1px 3px rgba(18,26,56,0.04);
+  --elevation-2: 0 4px 12px -2px rgba(18,26,56,0.10);
+  --elevation-3: 0 12px 24px -6px rgba(18,26,56,0.12);
+  --elevation-4: 0 24px 48px -12px rgba(18,26,56,0.18);
+  --elevation-focus: 0 0 0 3px rgba(29,184,242,0.9);   /* Light Blue focus ring */
+
+  /* ── Border widths ── */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 3px;
+
+  /* ── Progress Bar sizing ── */
+  --progress-bar-height: 8px;   /* thin signature rule */
+
+  /* ── Z-index scale ── */
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-dialog:   400;
+  --z-toast:    500;
+}

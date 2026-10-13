@@ -1,0 +1,41 @@
+/* Capgemini Invent Design System - Webfonts
+   @font-face declarations for Ubuntu, the Capgemini brand typeface.
+   Ubuntu is the only permitted display/body typeface. Verdana is the
+   system fallback the brandbook names for environments without Ubuntu
+   (e.g. a shared PowerPoint), so it leads the fallback stack. */
+
+/* Ubuntu - Light (300): display + large headlines */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ubuntu - Regular (400): default weight across all levels of type */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ubuntu - Medium (500): body headers, notations, UI labels */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ubuntu - Bold (700): rare, for maximum emphasis only */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
